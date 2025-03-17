@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "declaration": true,
+      "outDir": "../../dist/types"
+    },
+    "exclude": ["node_modules"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "rootDir": "./src",  
+}
+  

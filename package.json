@@ -1,0 +1,33 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "npm run dev-server --workspace=apps/server",
+    "dev:client": "npm run dev-client --workspace=apps/client",
+    "dev": "dotenv -e .env npm run dev:server & dotenv -e .env npm run dev:client",
+    "build:server": "npm run build --workspace=apps/server",
+    "build:client": "npm run build --workspace=apps/client",
+    "build:types": "npm run build --workspace=packages/types",
+    "build": "npm run build:types && npm run build:client && npm run build:server",
+    "clean": "rimraf **/dist",
+    "type-check": "tsc -b packages/types apps/server apps/client"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "apps/server",
+    "apps/client",
+    "packages/types"
+  ],
+  "dependencies": {
+    "dotenv-cli": "^8.0.0",
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
